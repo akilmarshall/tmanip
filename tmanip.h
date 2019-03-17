@@ -1,6 +1,6 @@
 /*
- * Singleton class that allows the user to manipulate the terminal cursor position
- * as well as the color of the text produced.
+ * Singleton class that allows the user to manipulate the terminal cursor position as well as the
+ * color of the text produced.
  */
 #ifndef TMANIP_H
 #define TMANIP_H
@@ -55,9 +55,8 @@ class Cursor {
 						std::cout << "\e[u";
 				}
 				void erase_line() {
-						//Clears all characters from the cursor position to
-						//the end of the line (including the character at
-						//the cursor position).
+						//Clears all characters from the cursor position to the end of the line
+						//(including the character at the cursor position).
 						std::cout << "\e[K";
 				}
 				void bold() {
@@ -105,16 +104,14 @@ class Cursor {
 						auto rs = std::to_string(r);
 						auto gs = std::to_string(g);
 						auto bs = std::to_string(b);
-						std::cout << "\x1b[38;2;" + rs + ";" + gs + ";"
-										+ bs + "m";
+						std::cout << "\x1b[38;2;" + rs + ";" + gs + ";" + bs + "m";
 				}
 				void bg(int r, int g, int b) {
 						//Set the background color to rgb(r,g,b).
 						auto rs = std::to_string(r);
 						auto gs = std::to_string(g);
 						auto bs = std::to_string(b);
-						std::cout << "\x1b[48;2;" + rs + ";" + gs + ";"
-										+ bs + "m";
+						std::cout << "\x1b[48;2;" + rs + ";" + gs + ";" + bs + "m";
 				}
 		private:
 				Cursor (){}

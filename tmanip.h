@@ -8,6 +8,19 @@
 #include <string>
 #include <iostream>
 
+std::string fg(int r, int g, int b, std::string s) {
+		auto rs = std::to_string(r);
+		auto gs = std::to_string(g);
+		auto bs = std::to_string(b);
+		return "\x1b[38;2;" + rs + ";" + gs + ";" + bs + "m" + s + "\x1b[0m";
+}
+std::string bg(int r, int g, int b, std::string s) {
+		auto rs = std::to_string(r);
+		auto gs = std::to_string(g);
+		auto bs = std::to_string(b);
+		return "\x1b[48;2;" + rs + ";" + gs + ";" + bs + "m" + s + "\x1b[0m";
+}
+
 class Cursor {
 		public:
 				static Cursor *getInstance() {
